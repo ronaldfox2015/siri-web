@@ -1,0 +1,15 @@
+<div class="container">
+  <app-carousel/>
+  <div class="card-container">
+    <div class="category-card-container">
+      <app-selectable-card
+        *ngFor="let item of menuItems; let i = index"
+        [title]="item.title"
+        [i]="i"
+      >
+      </app-selectable-card>
+    </div>
+    <app-job-card *ngFor="let job of jobs" [jobInput]="job"></app-job-card>
+  </div>
+
+</div>

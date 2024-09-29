@@ -1,0 +1,20 @@
+<div class="carousel-container">
+  <!-- Carrusel de imágenes dinámico -->
+  <div class="carousel">
+    <div *ngFor="let image of images" class="carousel-slide">
+      <img [src]="image.src" [alt]="image.alt">
+    </div>
+  </div>
+
+  <!-- Flechas de navegación -->
+  <button class="prev" (click)="prevSlide()">&#10094;</button>
+  <button class="next" (click)="nextSlide()">&#10095;</button>
+
+  <!-- Barra de búsqueda -->
+  <div class="search-bar">
+    <input type="text" placeholder="Search">
+    <button>
+      <img alt="Search" [src]="search">
+    </button>
+  </div>
+</div>

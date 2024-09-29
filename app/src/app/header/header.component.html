@@ -1,0 +1,50 @@
+<!--&lt;!&ndash; header.component.html &ndash;&gt;-->
+<!--<header class="header">-->
+<!--  <nav class="navbar">-->
+<!--    <a routerLink="/" class="navbar-logo">-->
+<!--      <img src="static/logo.png" alt="Logo de Siri" />-->
+<!--    </a>-->
+<!--    &lt;!&ndash; Menú de navegación &ndash;&gt;-->
+<!--    <ul class="navbar-menu" [ngClass]="{ 'active': isMenuOpen }">-->
+<!--      <li><a href="/">Inicio</a></li>-->
+<!--      <li><a href="/registro-empresa">Registro de Empresa</a></li>-->
+<!--      <li><a href="/autos-usados">Registro de candidato</a></li>-->
+<!--      <li><a href="/blog">Blog</a></li>-->
+<!--      <li><a href="/contacto">Contacto</a></li>-->
+<!--    </ul>-->
+
+
+
+<!--    <div class="navbar-brand">-->
+<!--      &lt;!&ndash; Logo &ndash;&gt;-->
+<!--&lt;!&ndash;      <a routerLink="/" class="navbar-toggler-logo">&ndash;&gt;-->
+<!--&lt;!&ndash;        <img src="static/logo.png" alt="Logo de Siri" />&ndash;&gt;-->
+<!--&lt;!&ndash;      </a>&ndash;&gt;-->
+<!--      &lt;!&ndash; Botón del menú hamburguesa &ndash;&gt;-->
+<!--      <button class="navbar-toggler" (click)="toggleMenu()">-->
+<!--      </button>-->
+<!--    </div>-->
+<!--    &lt;!&ndash; Botones de acción (Ejemplo: Publicar Aviso) &ndash;&gt;-->
+<!--    <div class="navbar-actions">-->
+<!--      <button class="action-button">Publicar Aviso</button>-->
+<!--    </div>-->
+<!--  </nav>-->
+<!--</header>-->
+<header>
+  <div class="container">
+    <div class="logo">
+      <span>👤</span> <span>SIRI</span>
+    </div>
+    <nav [class.active]="menuActive">
+      <ul>
+        <li><a routerLink="/">HOME</a></li>
+        <li><a routerLink="/empresa">EMPRESA</a></li>
+        <li><a routerLink="/aplicante">APLICANTE</a></li>
+        <li><a routerLink="/publicacion">PUBLICACION</a></li>
+      </ul>
+    </nav>
+    <div class="menu-icon" (click)="toggleMenu()">
+      <span class="hamburger"></span>
+    </div>
+  </div>
+</header>

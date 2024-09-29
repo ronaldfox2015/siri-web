@@ -1,0 +1,125 @@
+/* footer.component.css */
+.footer {
+  background-color: rgba(213, 212, 212, 0.44);
+  color: #234d7f;
+  padding: 20px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box; /* Asegura que el padding se incluya en el ancho total */
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px; /* Padding para móviles y pantallas pequeñas */
+  max-width: 1500px; /* Ancho máximo del contenedor */
+  margin: 0 auto; /* Centra el contenedor horizontalmente */
+  box-sizing: border-box; /* Asegura que el padding se incluya en el ancho total */
+}
+
+.footer-info,
+.footer-links,
+.footer-social {
+  flex: 1;
+  padding: 10px;
+}
+
+.footer h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #0d3983; /* Color de los títulos */
+}
+
+.footer p,
+.footer a {
+  font-size: 14px;
+  color: #000000;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 5px;
+}
+
+.footer-social a {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.footer-copyright {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 12px;
+  padding: 0 20px; /* Padding para móviles y pantallas pequeñas */
+}
+
+/* Media Queries */
+
+/* Pantallas de escritorio grandes (mayores a 1200px) */
+@media (min-width: 1200px) {
+  .footer-content {
+    padding: 0 40px; /* Padding adicional para pantallas grandes */
+  }
+}
+
+/* Pantallas de escritorio medianas (entre 992px y 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .footer-content {
+    padding: 0 30px; /* Padding para pantallas medianas */
+  }
+}
+
+/* Pantallas de tabletas y dispositivos más pequeños (entre 768px y 991px) */
+@media (max-width: 991px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-info,
+  .footer-links,
+  .footer-social {
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .footer-links ul {
+    padding-left: 0;
+  }
+}
+
+/* Pantallas móviles (menores a 768px) */
+@media (max-width: 767px) {
+  .footer-content {
+    padding: 0 15px; /* Padding reducido para pantallas pequeñas */
+  }
+
+  .footer-info h3,
+  .footer-links h3,
+  .footer-social h3 {
+    font-size: 16px; /* Tamaño de fuente más pequeño en móviles */
+  }
+
+  .footer p,
+  .footer a {
+    font-size: 12px; /* Tamaño de fuente más pequeño en móviles */
+  }
+
+  .footer-links li {
+    margin-bottom: 10px;
+  }
+
+  .footer-social a {
+    margin-bottom: 10px;
+  }
+}

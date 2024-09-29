@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+/* styles.css */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f6f6f6; /* Color de fondo similar al de Neoauto */
+}
+
+.main-container {
+  max-width: 1500px; /* Ajuste del ancho máximo del contenido */
+  margin: 0 auto; /* Centrando el contenido */
+  padding: 20px;
+}

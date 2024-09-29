@@ -1,0 +1,34 @@
+.vertical-card {
+  width: 300px; /* Ajusta el ancho según sea necesario */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+}
+
+.card-img-top {
+  width: 100%; /* Asegura que la imagen ocupe todo el ancho del card */
+  height: 180px; /* Ajusta la altura de la imagen */
+  object-fit: cover; /* Mantiene la proporción de la imagen */
+}
+
+.card-body {
+  padding: 16px;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+}
+
+.company {
+  font-size: 1rem;
+  color: #000;
+  margin-bottom: 4px;
+}
+
+.location {
+  font-size: 0.9rem;
+  color: #555;
+}

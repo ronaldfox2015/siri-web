@@ -1,0 +1,138 @@
+/* Estilos generales del header */
+header {
+  background-color: white;
+  padding: 15px 0;
+  border-bottom: 3px solid #5B00E1;
+  position: relative;
+  z-index: 1000; /* Asegura que el header esté encima del menú */
+}
+
+/* Contenedor principal del header */
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px; /* El padding básico para móviles y pantallas pequeñas */
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.5em;
+}
+
+.logo span:last-child {
+  margin-left: 10px;
+  color: #5B00E1;
+  font-weight: bold;
+}
+
+/* Estilos del menú de navegación */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding-left: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #007bff;
+  font-size: 1.2em;
+}
+
+nav.active ul {
+  display: block;
+}
+
+.menu-icon {
+  display: none;
+  cursor: pointer;
+}
+
+.hamburger {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: #007bff;
+  position: relative;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 3px;
+  background-color: #007bff;
+  left: 0;
+}
+
+.hamburger::before {
+  top: -10px;
+}
+
+.hamburger::after {
+  bottom: -10px;
+}
+
+/* Estilos responsivos para menú hamburguesa */
+@media (max-width: 1500px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav.active ul {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+}
+
+/* Aplicar el padding de 500px en pantallas grandes */
+@media (min-width: 1500px) {
+  .container {
+    padding: 0 500px; /* Aplicar el padding lateral en pantallas grandes */
+  }
+}
+
+/* Estilos para el menú hamburguesa en la versión móvil */
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+  }
+
+  nav.active ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 60px; /* Comienza justo debajo del header */
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 60px); /* Altura total menos la altura del header */
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo gris oscuro */
+    padding: 0;
+    margin: 0;
+    z-index: 999;
+  }
+
+  nav ul li {
+    margin: 20px 0;
+  }
+
+  nav ul li a {
+    color: white;
+    font-size: 1.5em;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+}

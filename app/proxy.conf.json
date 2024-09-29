@@ -1,0 +1,16 @@
+{
+  "/v1/*": {
+    "target": "http://balancer",
+    "secure": false,
+    "changeOrigin": false,
+    "logLevel": "debug"
+  },
+  "/static/*": {
+    "target": "http://balancer",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/images": "/app/public/static"
+    }
+  }
+}

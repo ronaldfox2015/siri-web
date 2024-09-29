@@ -1,0 +1,23 @@
+
+.category-card {
+  background-color: white;
+  border: 2px solid transparent;
+  border-radius: 30px;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #007bff; /* Color del texto azul por defecto */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 250px; /* Ajusta el ancho según tus necesidades */
+}
+
+.category-card:hover {
+  border-color: #007bff;
+}
+
+.selected {
+  background-color: #007bff; /* Color de fondo al estar seleccionado */
+  color: white; /* Texto blanco cuando está seleccionado */
+  border: 2px solid #007bff;
+}
