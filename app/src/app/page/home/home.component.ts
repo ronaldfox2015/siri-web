@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
-import {CarouselComponent} from "../carousel/carousel.component";
-import {JobCardComponent} from "../job-card/job-card.component";
+import {CarouselComponent} from "../../component/carousel/carousel.component";
+import {JobCardComponent} from "../../component/job-card/job-card.component";
 import {NgForOf} from "@angular/common";
-import {SelectableCardComponent} from "../selectable-card/selectable-card.component";
+import {SelectableCardComponent} from "../../component/selectable-card/selectable-card.component";
+import { Router } from '@angular/router';
+import {ApplicantService} from "../../service/applicant.service";
 
 @Component({
   selector: 'app-home',
@@ -39,5 +41,8 @@ export class HomeComponent {
     { title: 'finanzas', description: 'Description for item 3' },
     { title: 'Producción', description: 'Description for item 3' }
   ];
-
+  constructor(private router: Router) {}
+  manejarRedireccion() {
+    this.router.navigate(['/buscar']);  // Redirigir desde el padre
+  }
 }

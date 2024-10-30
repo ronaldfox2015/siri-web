@@ -1,0 +1,46 @@
+.search-container {
+  display: flex; /* Usar flexbox para alinear los filtros y la lista en fila */
+  align-items: flex-start; /* Alinear los elementos al inicio */
+  gap: 20px; /* Espacio entre los elementos */
+  padding: 16px; /* Espaciado alrededor del contenedor */
+}
+
+
+.list-container {
+  display: flex; /* Usar flexbox para alinear los filtros y la lista en fila */
+  flex-direction: column; /* Alinear los elementos al inicio */
+  gap: 20px; /* Espacio entre los elementos */
+  padding: 16px; /* Espaciado alrededor del contenedor */
+}
+
+
+/* Estilos para la paginación */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.page-link {
+  padding: 10px 15px;
+  margin: 0 5px;
+  background-color: #f0f0f0;
+  color: #333;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.page-link:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.page-link.active {
+  background-color: #007bff;
+  color: white;
+}
+button:hover {
+  background-color: #218838;
+}
+

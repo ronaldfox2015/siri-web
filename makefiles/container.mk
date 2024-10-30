@@ -23,7 +23,7 @@ ifeq ($(MODE), build-dist)
 	@docker container run --workdir "/${APP_DIR}" --rm -i \
 		-v "${PWD}/${APP_DIR}":/${APP_DIR} \
 		${IMAGE_BUILD} \
-		yarn build
+		npm run build
 	@ls -l ${PWD}/${APP_DIR}/dist
 endif
 
@@ -38,8 +38,8 @@ install-local:
 
 
 up: ##@Local Start the project
-	export IMAGE_DEV="$(IMAGE_BUILD)" && CONTAINER_NAME="$(CONTAINER_NAME)" && PATH_SERVICE="$(PATH_SERVICE)" && NETWORK=${DOCKER_NETWORK} \
-		docker-compose -p $(SERVICE_NAME) up backend
+	export IMAGE_DEV="$(IMAGE_BUILD)" && CONTAINER_NAME="$(CONTAINER_NAME)" && PATH_SERVICE="$(PATH_SERVICE)"  \
+		docker-compose -p $(SERVICE_NAME) up -d backend
 
 up-doc: ##@Local Start the project
 	export SERVICE_NAME="$(SERVICE_NAME)doc" && IMAGE_DEV="$(IMAGE_DEPLOY_DEV)" && PROJECT_NAME="$(PROJECT_NAME)" && PATH_SERVICE="local.statistic-documentation.com" && NETWORK=${NETWORK} \
@@ -59,11 +59,7 @@ hooks-app: ##@Local hooks the project
 	cp $(PWD)/hooks/prepare-commit-msg .git/hooks/ && chmod +x .git/hooks/prepare-commit-msg
 
 ssh: ##@Local Access the docker container
-	@docker container run -it --rm \
-  	-u ${_LOCAL}:${GID_LOCAL} \
-  			--network="neo_network" \
-	-v "${PWD}/${APP_DIR}":/${APP_DIR} \
-	$(IMAGE_DEPLOY_DEV) /bin/sh
+	@docker exec -it  $(CONTAINER_NAME) /bin/sh
 
 lint: ##@Global install dependencies
 	@docker container run --workdir "/${APP_DIR}" --rm -i \

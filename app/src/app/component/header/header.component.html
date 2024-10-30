@@ -1,0 +1,27 @@
+<header>
+  <div class="container">
+    <div class="logo">
+      <span>👤</span> <span>SIRI</span>
+    </div>
+    <nav [class.active]="menuActive">
+      <ul>
+        <li><a routerLink="/">HOME</a></li>
+        <li><a routerLink="/empresa">EMPRESA</a></li>
+        <li><a routerLink="#" (click)="openModal()">POSTULANTE</a></li>
+        <li><a routerLink="#" (click)="openModalRegister()">REGISTRO </a></li>
+        <li><a routerLink="/publicacion">PUBLICACION</a></li>
+      </ul>
+    </nav>
+    <div class="menu-icon" (click)="toggleMenu()">
+      <span class="hamburger"></span>
+    </div>
+  </div>
+  <app-login-modal [isVisible]="isModalVisible" (closeModal)="closeModal()"></app-login-modal>
+
+  <app-applicant-register-modal
+    [isVisible]="isModalVisibleRegister"
+    (closeModal)="closeModalRegister()"
+    (registerApplicant)="registerApplicant">
+  </app-applicant-register-modal>
+
+</header>

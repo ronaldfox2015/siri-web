@@ -136,3 +136,12 @@ nav.active ul {
     display: block;
   }
 }
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: #3f51b5; /* Color del enlace */
+}
+
+a:hover {
+  text-decoration: underline;
+}

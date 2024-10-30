@@ -1,12 +1,35 @@
 {
-  "/v1/*": {
+  "/v1/user/health" : {
     "target": "http://balancer",
     "secure": false,
-    "changeOrigin": false,
-    "logLevel": "debug"
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/v1/user/health": "/v1/user/health"
+    }
   },
-  "/static/*": {
+
+  "/v1/user" : {
     "target": "http://balancer",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/v1/user": "/v1/user",
+      "^/v1/applicant": "/v1/applicant"
+    }
+  },
+
+  "/v1/applicant" : {
+    "target": "http://balancer",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/v1/applicant": "/v1/applicant"
+    }
+  },
+
+
+  "/static/*": {
+    "target": "http://172.24.0.5",
     "secure": false,
     "changeOrigin": true,
     "pathRewrite": {

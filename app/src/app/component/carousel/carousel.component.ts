@@ -1,7 +1,8 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import {NgForOf, NgIf} from "@angular/common";
 import {FormsModule} from "@angular/forms";
+
 
 @Component({
   selector: 'app-carousel',
@@ -16,14 +17,19 @@ import {FormsModule} from "@angular/forms";
   styleUrl: './carousel.component.css'
 })
 export class CarouselComponent {
-  search = 'http://siri.com/static/lupa.png'
+  search = 'http://local.siri.com/static/lupa.png'
   images = [
-    { src: 'http://siri.com/static/carousel/slide1.jpg', alt: 'Descripción de la imagen 1' },
-    { src: 'http://siri.com/static/carousel/slider2.jpeg', alt: 'Descripción de la imagen 2' },
-    { src: 'http://siri.com/static/carousel/slide3.jpg', alt: 'Descripción de la imagen 3' }
+    { src: 'http://local.siri.com/static/carousel/slide1.jpg', alt: 'Descripción de la imagen 1' },
+    { src: 'http://local.siri.com/static/carousel/slider2.jpeg', alt: 'Descripción de la imagen 2' },
+    { src: 'http://local.siri.com/static/carousel/slide3.jpg', alt: 'Descripción de la imagen 3' }
   ];
 
   currentSlide = 0;
+  @Output() redirigirEvent = new EventEmitter<void>();
+
+  emitirRedireccion() {
+    this.redirigirEvent.emit();  // Emitir evento al component padre
+  }
 
   nextSlide() {
     const totalSlides = 3;
@@ -41,4 +47,6 @@ export class CarouselComponent {
     const carousel = document.querySelector('.carousel') as HTMLElement;
     carousel.style.transform = `translateX(-${this.currentSlide * 100}%)`;
   }
+
+
 }

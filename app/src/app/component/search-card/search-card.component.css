@@ -1,0 +1,122 @@
+.job-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  padding: 15px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  position: relative;
+  max-width: 100%;
+}
+
+.job-header {
+  display: flex;
+  flex-direction: column;
+}
+
+.job-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.company-name {
+  font-size: 14px;
+  color: #555;
+  margin-top: 5px;
+}
+
+.post-time {
+  font-size: 12px;
+  color: #888;
+}
+
+.job-description p {
+  font-size: 14px;
+  color: #666;
+  margin-top: 10px;
+}
+
+.job-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Para centrar verticalmente los íconos y texto */
+  margin-top: 15px;
+}
+
+.job-location, .job-type {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.location-icon::before {
+  content: '📍'; /* Usa un icono adecuado */
+  margin-right: 5px;
+}
+
+.type-icon::before {
+  content: '🏢'; /* Icono para el tipo de trabajo */
+  margin-right: 5px;
+}
+
+.favorite {
+  cursor: pointer;
+}
+
+.favorite-icon::before {
+  content: '♡'; /* Icono de favorito */
+  font-size: 20px;
+}
+
+/* === Media Queries para Dispositivos Móviles === */
+
+@media (max-width: 768px) {
+  .job-card {
+    padding: 10px;
+  }
+
+  .job-title {
+    font-size: 16px;
+  }
+
+  .company-name {
+    font-size: 12px;
+  }
+
+  .post-time {
+    font-size: 10px;
+  }
+
+  .job-description p {
+    font-size: 13px;
+  }
+
+  .job-details {
+    flex-direction: column; /* Cambia a disposición en columna en pantallas pequeñas */
+    align-items: flex-start;
+  }
+
+  .job-location, .job-type {
+    margin-bottom: 10px; /* Agrega espacio entre los elementos */
+  }
+
+  .favorite-icon::before {
+    font-size: 18px; /* Ajusta el tamaño del ícono de favorito */
+  }
+}
+button {
+  padding: 10px;
+  background-color: #0669ff;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0669ff;
+}

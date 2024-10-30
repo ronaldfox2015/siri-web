@@ -1,0 +1,36 @@
+.search-container {
+  display: flex; /* Usar flexbox para alinear los filtros y la lista en fila */
+  align-items: flex-start; /* Alinear los elementos al inicio */
+  gap: 20px; /* Espacio entre los elementos */
+  padding: 16px; /* Espaciado alrededor del contenedor */
+}
+
+.filter-container {
+  background-color: #f9f9f9; /* Color de fondo similar al de la imagen */
+  border-radius: 8px; /* Bordes redondeados */
+  padding: 16px; /* Espaciado interno */
+  width: 300px; /* Ancho del componente */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+.filter-item {
+  background-color: #e0e0e0; /* Color de fondo para los ítems */
+  border-radius: 4px; /* Bordes redondeados */
+  padding: 8px; /* Espaciado interno */
+  margin: 8px 0; /* Espaciado vertical entre los ítems */
+  display: flex; /* Flexbox para centrar el contenido */
+  justify-content: space-between; /* Espacio entre el texto y el icono */
+}
+
+.delete-icon {
+  cursor: pointer; /* Cambiar el cursor al pasar el ratón */
+  text-align: center; /* Centrar el icono */
+}
+
+.delete-button {
+  color: blue; /* Color azul para el icono de eliminar */
+}
+
+.delete-button:hover {
+  color: darkblue; /* Cambio de color al pasar el ratón */
+}
